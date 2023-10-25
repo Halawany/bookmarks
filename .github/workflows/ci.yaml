@@ -37,7 +37,8 @@ jobs:
   
   docker-compose-shutdown:
     runs-on: ubuntu-latest
-    needs: docker-build
+    needs: [check-docker-compose, docker-build]
     steps:
       - name: shutdown docker-compose
-        run: docker-compose -f "docker-compose.yaml" down
+        if: always()
+        run: docker-compose down
