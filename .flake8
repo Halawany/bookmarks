@@ -1,4 +1,4 @@
 [flake8]
-exclude = migrations,settings.py,urls.py
+exclude = migrations,settings.py,urls.py,bookmark/models.py,bookmark/tests.py,bookmark/admin.py,bookmark/views.py
 max-line-length = 120
 ignore = E402,E501

@@ -30,10 +30,7 @@ jobs:
     steps:
       - name: install flake8
         run: sudo apt install flake8
-      
-      - name: ignore some codes
-        run: flake8 --ignore=bookmarks/settings.py bookmarks/urls.py
-      
+            
       - uses: actions/checkout@v4
       - name: lint with falke8
         run: flake8
