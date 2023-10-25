@@ -39,6 +39,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: [check-docker-compose, docker-build]
     steps:
+      - name: check code
+        uses: actions/checkout@v4
+
       - name: shutdown docker-compose
         if: always()
         run: docker-compose down
