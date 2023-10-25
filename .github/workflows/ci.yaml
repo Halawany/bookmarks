@@ -1,0 +1,43 @@
+name: Bookmarks CI workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  check-docker-compose:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: check docker-compose is installed
+        run: docker-compose --version
+
+  docker-build:
+    runs-on: ubuntu-latest
+    needs: check-docker-compose
+    steps:
+    - name: check code
+      uses: actions/checkout@v4
+
+    - name: Build the Docker image
+      run: docker-compose -f "docker-compose.yaml" up -d --build
+    
+  
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install flake8
+        run: sudo apt install flake8
+        
+      - uses: actions/checkout@v4
+      - name: lint with falke8
+        run: flake8
+  
+  docker-compose-shutdown:
+    runs-on: ubuntu-latest
+    needs: docker-build
+    steps:
+      - name: shutdown docker-compose
+        run: docker-compose down
