@@ -4,5 +4,33 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Hello World!</h1>
+    <div class="box">
+        <p>This is a paragraph with some text. You can perform the following actions:</p>
+        <div class="options">
+            <a href="#" class="option open">Open</a>
+            <a href="#" class="option edit">Edit</a>
+            <a href="#" class="option delete">Delete</a>
+        </div>
+    </div>
+
+    <div class="popup" id="editPopup">
+        <div class="popup-content">
+            <span class="close" id="editClose">&times;</span>
+            <h2>Edit Item</h2>
+            <input type="text" id="editTitle" placeholder="Title">
+            <input type="text" id="editURL" placeholder="URL">
+            <button id="saveEdit">Save</button>
+            <button id="cancelEdit">Cancel</button>
+        </div>
+    </div>
+
+    <div class="popup" id="deletePopup">
+        <div class="popup-content">
+            <span class="close" id="deleteClose">&times;</span>
+            <h2>Delete Item</h2>
+            <p>Do you want to delete this item?</p>
+            <button id="confirmDelete">Yes</button>
+            <button id="cancelDelete">No</button>
+        </div>
+    </div>
 {% endblock %}
