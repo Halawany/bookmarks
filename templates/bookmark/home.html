@@ -5,12 +5,14 @@
 
 {% block body %}
     <div class="box">
-        <p>This is a paragraph with some text. You can perform the following actions:</p>
+        {% for bookmark in bookmarks %}
+        <p>{{ bookmark.title }}</p>
         <div class="options">
-            <a href="#" class="option open">Open</a>
+            <a href="{{ bookmark.url }}" target="_blank" class="option open">Open</a>
             <a href="#" class="option edit">Edit</a>
             <a href="#" class="option delete">Delete</a>
         </div>
+        {% endfor %}
     </div>
 
     <div class="popup" id="editPopup">
