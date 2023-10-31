@@ -6,21 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-    <title>{% block title%}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">Bookmarks</a>
-        <a href="#">New Bookmark</a>
-        <a href="#">API</a>
-        <a href="#">Login</a>
-        <a href="#">Signup</a>
-        <a href="#">Logout</a>
-      </div>
-      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-      {% block body %}
-      {% endblock %}
-      <script src="{% static 'js/script.js' %}"></script>
+    <div class="sidebar">
+        <ul>
+            <li>
+                <a href="#bookmarks" class="sidebar-link">
+                    <i class="fas fa-bookmark"></i>
+                    Bookmarks
+                </a>
+            </li>
+            <li>
+                <a href="#apis" class="sidebar-link">
+                    <i class="fas fa-database"></i>
+                    APIs
+                </a>
+            </li>
+            <li>
+                <a href="#login" class="sidebar-link">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Login
+                </a>
+            </li>
+            <li>
+                <a href="#logout" class="sidebar-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </li>
+            <li>
+                <a href="#register" class="sidebar-link">
+                    <i class="fas fa-user-plus"></i>
+                    Register
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    
+    <div class="content">
+        <!-- Your page content goes here -->
+    </div>
+    
+    {% block body %}
+    {% endblock %}
+    
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
