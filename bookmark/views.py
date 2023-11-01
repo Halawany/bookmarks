@@ -8,8 +8,9 @@ class HomeView(ListView):
     template_name = "bookmark/home.html"
     context_object_name = 'bookmarks'
 
-class BookmarkDetailView(UpdateView):
+class BookmarkUpdateView(UpdateView):
 
     model = Bookmark
-    template_name = "bookmark/home.html"
+    template_name = "bookmark/edit.html"
     fields = ["title", "url"]
+    success_url = '/'

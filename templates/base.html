@@ -48,11 +48,9 @@
     
     <div class="content">
         <!-- Your page content goes here -->
+        {% block body %}
+        {% endblock %}
     </div>
-    
-    {% block body %}
-    {% endblock %}
-    
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

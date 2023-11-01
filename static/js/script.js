@@ -13,3 +13,4 @@ sidebarLinks.forEach(link => {
         this.classList.add('active');
     });
 });
+

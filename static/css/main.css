@@ -63,7 +63,7 @@ i {
 
 /* Content area styling */
 .content {
-  margin-left: 250px;
+  margin-left: 250px; /* Move content area next to the sidebar */
   padding: 20px;
 }
 
@@ -78,3 +78,53 @@ i {
 .fa-sign-in-alt::before { content: "\f2f6"; }
 .fa-sign-out-alt::before { content: "\f2f5"; }
 .fa-user-plus::before { content: "\f234"; }
+
+
+/* CSS for the box */
+.box {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+/* Style for the title */
+.box h3 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the URL */
+.box p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Style for option buttons */
+.options a {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  text-decoration: none;
+  background-color: #007BFF;
+  color: #fff;
+  border: 1px solid #007BFF;
+  border-radius: 3px;
+}
+
+/* Hover effect for option buttons */
+.options a:hover {
+  background-color: #0056b3;
+  border: 1px solid #0056b3;
+}
+
+/* Style for the box container (if needed) */
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
