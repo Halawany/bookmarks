@@ -11,7 +11,7 @@
     <div class="options">
         <a href="{{ bookmark.url }}" target="_blank">Open</a>
         <a href="{% url 'edit_bookmark' bookmark.pk %}">Edit</a>
-        <a href="">Delete</a>
+        <a href="{% url 'delete_bookmark' bookmark.pk %}">Delete</a>
     </div>
 {% endfor %}
 {% endblock %}

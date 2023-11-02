@@ -14,3 +14,13 @@ sidebarLinks.forEach(link => {
     });
 });
 
+// Delete Bookmark
+document.getElementById("deleteButton").addEventListener("click", function() {
+    // Add your code for deleting the bookmark here
+    alert("Bookmark deleted!");
+});
+
+document.getElementById("cancelButton").addEventListener("click", function() {
+    // Add your code for canceling the delete operation here
+    alert("Deletion canceled!");
+});

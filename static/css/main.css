@@ -128,3 +128,23 @@ i {
   justify-content: space-between;
 }
 
+/* Delete Bookmakr */
+.confirmation-message {
+  margin: 20px;
+}
+.button-container {
+  margin: 20px;
+}
+.action-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+.action-button:hover {
+  background-color: #2980b9;
+}

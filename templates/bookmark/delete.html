@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block titel %}
+   Delete this bookmark, Are you sure?
+{% endblock %}
+
+{% block body %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="confirmation-message">
+            <h1>Delete Bookmark, Are you sure?</h1>
+        </div>
+        <div class="button-container">
+            <button class="action-button" id="deleteButton">Yes</button>
+            <button class="action-button" id="cancelButton">No</button>
+        </div>
+    </form>
+{% endblock %}
