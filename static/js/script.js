@@ -20,7 +20,10 @@ document.getElementById("deleteButton").addEventListener("click", function() {
     alert("Bookmark deleted!");
 });
 
-document.getElementById("cancelButton").addEventListener("click", function() {
-    // Add your code for canceling the delete operation here
-    alert("Deletion canceled!");
-});
+
+// Action button no
+document.getElementById('cancelButtonNo').addEventListener('click', function() {
+    // Redirect or perform any other action when the user clicks "No".
+    // For example, you can redirect them to a different page.
+    window.location.href = "/";
+})
