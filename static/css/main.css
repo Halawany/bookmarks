@@ -144,6 +144,7 @@ i {
   color: #fff;
   border: none;
   border-radius: 5px;
+  font-weight: bold;
 }
 .action-button:hover {
   background-color: #2980b9;
