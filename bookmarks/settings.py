@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # 3rd part apps
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
     'rest_framework',
 
     # Local apps
