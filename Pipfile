@@ -8,6 +8,9 @@ django = "*"
 djangorestframework = "*"
 flake8 = "*"
 django-allauth = "*"
+django-crispy-forms = "*"
+crispy-bootstrap5 = "*"
+crispy-bootstrap4 = "*"
 
 [dev-packages]
 

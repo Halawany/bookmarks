@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'crispy_forms',
+    'crispy_bootstrap4',
     'rest_framework',
 
     # Local apps
@@ -136,12 +138,16 @@ STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# django-crispy-forms
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+
 AUTHENTICATION_BACKENDS = [
     
-    # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
-
-    # `allauth` specific authentication methods, such as login by email
     'allauth.account.auth_backends.AuthenticationBackend',
     
 ]
+
+LOGIN_REDIRECT_URL = 'bookmarks'
+LOGOUT_REDIRECT_URL = 'bookmarks'
