@@ -10,6 +10,10 @@ class HomeView(LoginRequiredMixin, ListView):
     template_name = "bookmark/home.html"
     context_object_name = 'bookmarks'
 
+    def get_queryset(self):
+        query_Set = Bookmark.objects.filter(author=self.request.user)
+        return query_Set
+
 class NewBookmark(LoginRequiredMixin, CreateView):
     
     model = Bookmark
