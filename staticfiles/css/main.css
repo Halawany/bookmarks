@@ -1,0 +1,151 @@
+/* Reset default margin and padding */
+body, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic styling for the sidebar */
+.sidebar {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  padding-top: 20px;
+  height: 100%; /* Ensure the sidebar covers the entire height */
+  overflow-y: auto; /* Add scrollbars if needed */
+}
+
+/* Style for the sidebar list */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Style for sidebar items */
+li {
+  margin-bottom: 10px; /* Add margin to create spacing between items */
+  position: relative; /* Use relative positioning */
+}
+
+/* Style for sidebar links with padding */
+.sidebar-link {
+  padding: 10px; /* Add padding to the sidebar items */
+  display: block; /* Display links as blocks to occupy space */
+  text-align: left; /* Align text to the left within the block */
+  text-decoration: none; /* Remove underlines from links */
+  color: white; /* Set text color */
+  font-size: 16px; /* Set font size */
+  transition: 0.3s; /* Add transition for hover effect */
+  margin-left: 20px; /* Adjust the left margin for the items */
+}
+
+/* Hover effect for sidebar items */
+.sidebar-link:hover {
+  background-color: #555;
+  z-index: 2; /* Increase z-index on hover to ensure it's above other items */
+}
+
+/* Active state for sidebar items */
+.sidebar-link.active {
+  background-color: #555;
+  font-weight: bold;
+  z-index: 2; /* Set a higher z-index for active items */
+}
+
+/* Style for icons */
+i {
+  display: block; /* Display icons as blocks to occupy space */
+  color: white;
+  font-size: 20px;
+  margin-bottom: 5px; /* Add margin between icon and text */
+}
+
+/* Content area styling */
+.content {
+  margin-left: 250px; /* Move content area next to the sidebar */
+  padding: 20px;
+}
+
+/* Styling for Font Awesome icons */
+.fa {
+  font-family: "Font Awesome 5 Free";
+}
+
+/* Additional CSS for specific icons (replace with your own icons if needed) */
+.fa-bookmark::before { content: "\f02e"; }
+.fa-database::before { content: "\f1c0"; }
+.fa-sign-in-alt::before { content: "\f2f6"; }
+.fa-sign-out-alt::before { content: "\f2f5"; }
+.fa-user-plus::before { content: "\f234"; }
+
+
+/* CSS for the box */
+.box {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+/* Style for the title */
+.box h3 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the URL */
+.box p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Style for option buttons */
+.options a {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  text-decoration: none;
+  background-color: #007BFF;
+  color: #fff;
+  border: 1px solid #007BFF;
+  border-radius: 3px;
+}
+
+/* Hover effect for option buttons */
+.options a:hover {
+  background-color: #0056b3;
+  border: 1px solid #0056b3;
+}
+
+/* Style for the box container (if needed) */
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Delete Bookmakr */
+.confirmation-message {
+  margin: 20px;
+}
+.button-container {
+  margin: 20px;
+}
+.action-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.action-button:hover {
+  background-color: #2980b9;
+}

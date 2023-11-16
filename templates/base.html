@@ -31,24 +31,27 @@
                     APIs
                 </a>
             </li>
+            {% if user.is_authenticated %}
             <li>
-                <a href="#login" class="sidebar-link">
+                <a href="{% url 'account_logout' %}" class="sidebar-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{% url 'account_login' %}" class="sidebar-link">
                     <i class="fas fa-sign-in-alt"></i>
                     Login
                 </a>
             </li>
             <li>
-                <a href="#logout" class="sidebar-link">
-                    <i class="fas fa-sign-out-alt"></i>
-                    Logout
-                </a>
-            </li>
-            <li>
-                <a href="#register" class="sidebar-link">
+                <a href="{% url 'account_signup' %}" class="sidebar-link">
                     <i class="fas fa-user-plus"></i>
                     Register
                 </a>
             </li>
+            {% endif %}
         </ul>
     </div>
     

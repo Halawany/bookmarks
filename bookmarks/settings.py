@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'crispy_forms',
+    'crispy_bootstrap4',
     'rest_framework',
 
     # Local apps
@@ -136,6 +137,10 @@ STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# django-crispy-forms
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
 
 AUTHENTICATION_BACKENDS = [
     
