@@ -1,15 +1,16 @@
 from django.views.generic import ListView, UpdateView, DeleteView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 
 from .models import Bookmark
 
-class HomeView(ListView):
+class HomeView(LoginRequiredMixin, ListView):
     
     model = Bookmark
     template_name = "bookmark/home.html"
     context_object_name = 'bookmarks'
 
-class NewBookmark(CreateView):
+class NewBookmark(LoginRequiredMixin, CreateView):
     
     model = Bookmark
     template_name = "bookmark/new.html"
@@ -20,14 +21,14 @@ class NewBookmark(CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
     
-class BookmarkUpdateView(UpdateView):
+class BookmarkUpdateView(LoginRequiredMixin, UpdateView):
 
     model = Bookmark
     template_name = "bookmark/edit.html"
     fields = ["title", "url"]
     success_url = reverse_lazy('bookmarks')
 
-class DeleteBookmark(DeleteView):
+class DeleteBookmark(LoginRequiredMixin, DeleteView):
 
     model = Bookmark
     template_name = "bookmark/delete.html"
