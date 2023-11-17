@@ -32,6 +32,11 @@ class BookmarkUpdateView(LoginRequiredMixin, UpdateView):
     fields = ["title", "url"]
     success_url = reverse_lazy('bookmarks')
 
+    def get_queryset(self):
+        user_bookmarks = Bookmark.objects.filter(author=self.request.user)
+        return user_bookmarks
+    
+
 class DeleteBookmark(LoginRequiredMixin, DeleteView):
 
     model = Bookmark
