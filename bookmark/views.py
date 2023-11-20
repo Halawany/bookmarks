@@ -10,6 +10,10 @@ class HomeView(LoginRequiredMixin, ListView):
     template_name = "bookmark/home.html"
     context_object_name = 'bookmarks'
 
+    def get_queryset(self):
+        query_Set = Bookmark.objects.filter(author=self.request.user)
+        return query_Set
+
 class NewBookmark(LoginRequiredMixin, CreateView):
     
     model = Bookmark
@@ -28,8 +32,17 @@ class BookmarkUpdateView(LoginRequiredMixin, UpdateView):
     fields = ["title", "url"]
     success_url = reverse_lazy('bookmarks')
 
+    def get_queryset(self):
+        user_bookmarks = Bookmark.objects.filter(author=self.request.user)
+        return user_bookmarks
+    
+
 class DeleteBookmark(LoginRequiredMixin, DeleteView):
 
     model = Bookmark
     template_name = "bookmark/delete.html"
     success_url = reverse_lazy('bookmarks')
+    
+    def get_queryset(self):
+        user_bookmarks = Bookmark.objects.filter(author=self.request.user)
+        return user_bookmarks
