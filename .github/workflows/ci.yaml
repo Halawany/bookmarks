@@ -38,7 +38,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: check code
+        uses: actions/checkout@v4
+
       - name: run django tests
         run: docker-compose exec bookmarks python manage.py test      
 
