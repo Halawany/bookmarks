@@ -35,6 +35,13 @@ jobs:
       - name: lint with falke8
         run: flake8
   
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: run django tests
+        run: docker-compose exec bookmarks python manage.py test      
+
   docker-compose-shutdown:
     runs-on: ubuntu-latest
     needs: [check-docker-compose, docker-build]
