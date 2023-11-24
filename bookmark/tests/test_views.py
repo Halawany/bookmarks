@@ -14,11 +14,13 @@ class TestBookmarksView(TestCase):
         user = get_user_model().objects.get(id=1)
         user_2 = get_user_model().objects.get(id=2)
 
+        user = get_user_model().objects.get(id=1)
         bookmark = Bookmark.objects.create(
             title='Test Bookmark', 
             url="https://www.google.com",
             author=user
             )
+
         bookmark_2 = Bookmark.objects.create(
             title='New Test Bookmark', 
             url="https://www.facebook.com",
