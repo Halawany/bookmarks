@@ -35,10 +35,14 @@ jobs:
         run: |
              docker-compose exec bookmarks python manage.py makemigrations
              docker-compose exec bookmarks python manage.py migrate
+             echo "Tests are starting"
 
       - name: run django tests
         run: docker-compose exec bookmarks python manage.py test      
 
+      - name: print docker logs
+        run:  docker-compose logs
+      
   docker-compose-shutdown:
     runs-on: ubuntu-latest
     needs: [check-docker-compose, docker-build, test]
