@@ -31,12 +31,6 @@ jobs:
       - name: check code
         uses: actions/checkout@v4
 
-      - name: migrations
-        run: |
-             docker-compose exec bookmarks python manage.py makemigrations
-             docker-compose exec bookmarks python manage.py migrate
-             echo "Tests are starting"
-
       - name: run django tests
         run: docker-compose exec bookmarks python manage.py test      
 
