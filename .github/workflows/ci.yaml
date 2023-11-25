@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: run django tests
-        run: docker-compose exec bookmarks python manage.py test 
+        run: docker-compose exec bookmarks python manage.py bookmark.test
           
       
   docker-compose-shutdown:
