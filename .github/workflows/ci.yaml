@@ -24,7 +24,8 @@ jobs:
     - name: Build the Docker image
       run: docker-compose -f "docker-compose.yaml" up -d --build
     
-    
+    - name: docker logs
+      run: docker-compose logs
   
   test:
     runs-on: ubuntu-latest
