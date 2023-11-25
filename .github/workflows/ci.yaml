@@ -44,7 +44,7 @@ jobs:
       
   docker-compose-shutdown:
     runs-on: ubuntu-latest
-    needs: [check-docker-compose, docker-build, test]
+    needs: [check-docker-compose, docker-build]
     steps:
       - name: check code
         uses: actions/checkout@v3
