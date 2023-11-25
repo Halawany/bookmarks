@@ -34,6 +34,11 @@ jobs:
       - name: check code
         uses: actions/checkout@v3
 
+      - name: Set environment variables
+        run: echo "DJANGO_SETTINGS_MODULE=myapp.settings" >> $GITHUB_ENV
+        env:
+         DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
+      
       - name: run django tests
         run: docker-compose exec bookmarks python manage.py test
           
