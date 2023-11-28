@@ -114,3 +114,19 @@ class TestBookmarksView(TestCase):
         response = self.client.get('delete/2')
         self.assertEqual(response.status_code, 404)
         self.assertTemplateNotUsed(response, "bookmark/delete.html")
+
+    def test_user_can_search(self):
+
+        """User can search for bookmarks using title or url"""
+        self.client.force_login(self.user)
+        response = self.client.get(reverse('search_bookmark'), {'q': 'Test'})
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'bookmark/search.html')
+    
+    def test_user_can_search_for_his_bookmarks_only(self):
+
+        """User can only search for his/her bookmarks"""
+        self.client.force_login(self.user)
+        response = self.client.get(reverse('search_bookmark'), {'q': 'https://www.facebook.com'})
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "No result")

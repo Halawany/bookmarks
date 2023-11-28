@@ -58,6 +58,7 @@ class SearchView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         query = self.request.GET.get('q')
         object_list = Bookmark.objects.filter(
-            Q(title__icontains=query) | Q(url__icontains=query)
+            Q(title__icontains=query) | Q(url__icontains=query),
+            author=self.request.user
         )
         return object_list
