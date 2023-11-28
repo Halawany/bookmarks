@@ -4,6 +4,11 @@
 {% endblock %}
 
 {% block body %}
+<div class"form-style">
+    <form action="{% url 'search_bookmark' %}" method="get">
+        <input name="q" type="text" placeholder="Search...">
+      </form>
+</div>
 {% for bookmark in bookmarks %}
 <div class="box"> 
     <h3 id="title_{{ bookmark.pk }}">{{ bookmark.title }}</h3>
