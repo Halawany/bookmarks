@@ -4,10 +4,11 @@
 {% endblock %}
 
 {% block body %}
-<div class"form-style">
+<div class="form-style">
     <form action="{% url 'search_bookmark' %}" method="get">
-        <input name="q" type="text" placeholder="Search...">
-      </form>
+        <input name="q" type="text" placeholder="Search..." class="search-input">
+        <button type="submit" class="search-button">Search</button>
+    </form>
 </div>
 {% for bookmark in bookmarks %}
 <div class="box"> 
