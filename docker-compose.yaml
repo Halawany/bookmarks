@@ -9,4 +9,7 @@ services:
       - .:/bookmarks
     ports:
       - 8000:8000
-    
+    environment:
+      - DEBUG=True
+      - SECRET_KEY="django-insecure-o1-6n8#kmz$!2++(!=pm!+r%^@x7-or10c1k_f+-#j%o+v(h&("
+      - ALLOWED_HOSTS="render.com"
