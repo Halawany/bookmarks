@@ -2,7 +2,7 @@ name: Bookmarks CI workflow
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "deployment"]
   pull_request:
     branches: [ "main" ]
 
