@@ -11,6 +11,7 @@ django-allauth = "*"
 django-crispy-forms = "*"
 crispy-bootstrap5 = "*"
 crispy-bootstrap4 = "*"
+whitenoise = "*"
 
 [dev-packages]
 
