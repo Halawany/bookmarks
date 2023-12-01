@@ -36,7 +36,7 @@ jobs:
       
       - name: run django tests
         env:
-          SECRET_KEY: ${{ env.SECRET_KEY }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
         run: |
           pip install pipenv
           pipenv install --system
