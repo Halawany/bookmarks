@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: bookmarks
+    runtime: docker
+    repo: https://github.com/halawany/bookmarks # optional
+    region: oregon # optional (defaults to oregon)
+    plan: free # optional (defaults to starter instance type)
+    branch: main # optional (defaults to master)
+    rootDir: bookmarks
+    dockerCommand: ./webdis.sh # optional (defaults to Dockerfile command)
+    numInstances: 3 # optional (defaults to 1)
+    healthCheckPath: /
+    envVars:
+      - key: REDIS_HOST
+        
