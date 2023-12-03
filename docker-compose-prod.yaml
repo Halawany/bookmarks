@@ -12,3 +12,10 @@ services:
     environment:
       - DEBUG=0
       - "SECRET_KEY=sahjashdkjasdnasbndasmdbam34732847328947#@%#$$^$$&^%*&FSSDFW$$@#$$@#$$ERFSDFSDFST$$34##"
+      - CSRF_COOKIE_SECURE=1
+      - SESSION_COOKIE_SECURE=1
+      - "SECURE_HSTS_SECONDS=31536000"
+      - SECURE_SSL_REDIRECT=1
+      - SECURE_HSTS_INCLUDE_SUBDOMAINS=1
+      
+      
