@@ -10,5 +10,5 @@ services:
     ports:
       - 8000:8000
     environment:
-      - DEBUG=1
-      - "SECRET_KEY=django-insecure-o1-6n8#kmz$$!2++(!=pm!+r%^@x7-or10c1k_f+-#j%o+v(h&("
+      - DEBUG=0
+      - "SECRET_KEY=sahjashdkjasdnasbndasmdbam34732847328947#@%#$$^$$&^%*&FSSDFW$$@#$$@#$$ERFSDFSDFST$$34##"
