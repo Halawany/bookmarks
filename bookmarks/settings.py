@@ -142,3 +142,11 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 LOGIN_REDIRECT_URL = 'bookmarks'
 LOGOUT_REDIRECT_URL = 'bookmarks'
+
+# Deployment
+SECURE_HSTS_SECONDS = os.environ.get('SECURE_HSTS_SECONDS', 0)
+SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT', False)
+SECURE_HSTS_INCLUDE_SUBDOMAINS = os.environ.get('SECURE_HSTS_INCLUDE_SUBDOMAINS', False)
+
+SESSION_COOKIE_SECURE = os.environ.get('SESSION_COOKIE_SECURE', False)
+CSRF_COOKIE_SECURE = os.environ.get('CSRF_COOKIE_SECURE', False)
