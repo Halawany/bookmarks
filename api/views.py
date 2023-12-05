@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+from .serializers import BookmarkViewSetSerializer
+from bookmark.models import Bookmark
+
+class BookmarkViewSet(viewsets.ModelViewSet):
+    
+    queryset = Bookmark.objects.all()
+    serializer_class = BookmarkViewSetSerializer
