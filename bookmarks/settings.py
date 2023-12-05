@@ -37,6 +37,7 @@ INSTALLED_APPS = [
 
     # Local apps
     'bookmark.apps.BookmarkConfig',
+    'api.apps.ApiConfig',
 ]
 
 MIDDLEWARE = [
