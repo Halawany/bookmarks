@@ -1,9 +1,9 @@
-from rest_framework import viewsets
+from rest_framework import generics
 
 from .serializers import BookmarkViewSetSerializer
 from bookmark.models import Bookmark
 
-class BookmarkViewSet(viewsets.ModelViewSet):
+class BookmarkListCreateAPIView(generics.ListCreateAPIView):
     
     queryset = Bookmark.objects.all()
     serializer_class = BookmarkViewSetSerializer

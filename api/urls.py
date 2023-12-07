@@ -1,7 +1,7 @@
-from rest_framework import routers
+from django.urls import path, include
 
-from .views import BookmarkViewSet
+from .views import BookmarkListCreateAPIView
 
-router = routers.SimpleRouter()
-router.register('bookmarks', BookmarkViewSet, basename="bookmarks_api")
-urlpatterns = router.urls
+urlpatterns = [
+    path('', BookmarkListCreateAPIView.as_view(), name="bookmark_api_list"),
+]
