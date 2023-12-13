@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap4',
     'rest_framework',
     'whitenoise',
+    'drf_spectacular',
 
     # Local apps
     'bookmark.apps.BookmarkConfig',
@@ -84,6 +85,9 @@ DATABASES = {
     }
 }
 
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -156,3 +160,10 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = os.environ.get('SECURE_HSTS_INCLUDE_SUBDOMAINS'
 
 SESSION_COOKIE_SECURE = os.environ.get('SESSION_COOKIE_SECURE', False)
 CSRF_COOKIE_SECURE = os.environ.get('CSRF_COOKIE_SECURE', False)
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Bookmarks',
+    'DESCRIPTION': 'A project for saving your bookmarks and carry them all over the internet',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
