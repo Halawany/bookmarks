@@ -13,6 +13,7 @@ crispy-bootstrap5 = "*"
 crispy-bootstrap4 = "*"
 whitenoise = "*"
 gunicorn = "*"
+drf-spectacular = "*"
 
 [dev-packages]
 
