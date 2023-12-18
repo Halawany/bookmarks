@@ -76,4 +76,41 @@ docker-compose exec bookmarks python manage.py migrate
  - Github Actions
  - Sqlite3
 
+**Authentication**: Session Authentication
 
+**Project Routes**
+**Application routes**
+| Route                                   | Explanation                                |
+| --------------------------------------- | ------------------------------------------ |
+| [http://127.0.0.1:8000](http://127.0.0.1:8000)                          | Homepage Requires Authentication           |
+| [http://127.0.0.1:8000/new-bookmark/](http://127.0.0.1:8000/new-bookmark)             | Add new bookmark                           |
+| [http://127.0.0.1:8000/edit-bookmark/{pk}/](http://127.0.0.1:8000/edit-bookmark/{pk})   | Edit bookmark using bookmark Primary key   |
+| [http://127.0.0.1:8000/delete-bookmark/{pk}/](http://127.0.0.1:8000/delete-bookmark/{pk}) | Delete bookmark using bookmark Primary key |
+
+**API routes**
+| Route                                                                          | **Explanation**                         |
+| ------------------------------------------------------------------------------ | --------------------------------------- |
+| [http://127.0.0.1:8000/api/](http://127.0.0.1:8000/api/)                       | Api Homepage, List And create Bookmarks |
+| [http://127.0.0.1:8000/api/update/{id}](http://127.0.0.1:8000/api/update/{id}) | Edit bookmark using ID                  |
+| [http://127.0.0.1:8000/api/delete/{id}](http://127.0.0.1:8000/api/delete/{id}) | Delete Bookmark using ID                |
+
+**API Documentaion**
+| Route                                                                                    | Explanation |
+| ---------------------------------------------------------------------------------------- | ----------- |
+| [http://127.0.0.1:8000/api/docs/swagger-ui/](http://127.0.0.1:8000/api/docs/swagger-ui/) | Swagger-Ui  |
+
+**Authentication Routes**
+| Route                                                                            | Explanation |
+| -------------------------------------------------------------------------------- | ----------- |
+| [http://127.0.0.1:8000/accounts/login/](http://127.0.0.1:8000/accounts/login/)   | Login       |
+| [http://127.0.0.1:8000/accounts/logout/](http://127.0.0.1:8000/accounts/logout/) | Logout      |
+| [http://127.0.0.1:8000/accounts/signup/](http://127.0.0.1:8000/accounts/signup/) | Signup      |
+
+## Testing
+**How to run tests**
+
+    docker-compose exec bookmarks python manage.py test
+  
+**How to run tests for specific app**
+
+    docker-compose exec bookmarks python manage.py test {app-name}
