@@ -50,7 +50,7 @@ docker-compose up -d --build
 ```
 ### Database migration
 **Run the following commands to make database migration.**
-```python
+```docker
 docker-compose exec bookmarks python manage.py makemigration
 docker-compose exec bookmarks python manage.py migrate
 ```
@@ -63,8 +63,17 @@ docker-compose -f docker-compose-prod.yaml up -d --build
 ```
 ### Database migration
 **Run the following commands to make database migration.**
-```python
+```docker
 docker-compose exec bookmarks python manage.py makemigration
 docker-compose exec bookmarks python manage.py migrate
 ```
+**Tech stack**
+
+ - Docker
+ - Python
+ - Django
+ - Django Rest-Framework
+ - Github Actions
+ - Sqlite3
+
 
